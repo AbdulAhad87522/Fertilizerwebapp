@@ -1,0 +1,48 @@
+﻿@{
+	ViewData["Title"] = "Signup";
+}
+
+
+
+@model users
+
+
+<div class="container mt-4">
+	<h2>Signup</h2>
+	<form method="post">
+		<div class="form-group">
+			<label>Username</label>
+			<input asp-for="Username" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<label class="form-label">Password</label>
+			<input class="form-control" asp-for="Password"></input>
+		</div>
+		<div class="form-group">
+			<label class="form-label">Email</label>
+			<input class="form-control" asp-for="Email"></input>
+		</div>
+		<div class="form-group">
+			<label class="form-label">Password</label>
+			<input class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<label>Role</label>
+			<select class="form-control">
+				 <option value="1">Admin</option>
+				<option value="2">Staff</option>
+			</select>
+		</div>
+		<div>	
+			<button type="submit" class="btn btn-dark">Signup</button>
+		</div>
+		@if (ViewBag.Message != null)
+		{
+			<script>
+				alert('@ViewBag.Message');
+			</script>
+		}
+
+
+	</form>
+</div>
