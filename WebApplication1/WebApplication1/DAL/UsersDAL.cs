@@ -12,19 +12,47 @@ namespace WebApplication1.DAL
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
-                string query = "insert into users (username , password_hash , full_name)" +
-                    "value (@username ,@password , @email)";
-                using(MySqlCommand cmd = conn.CreateCommand())
+                string query = "insert into users (username , password_hash , Email, Role_Id)" +
+                    "value (@username ,@password , @email, @roleid)";
+                using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@username", us.Username);
-                    cmd.Parameters.AddWithValue("@username", us.Password);
-                    cmd.Parameters.AddWithValue("@username", us.Email);
-                    cmd.Parameters.AddWithValue("@username", us.Role);
-
+                    cmd.Parameters.AddWithValue("@password", us.Password);
+                    cmd.Parameters.AddWithValue("@email", us.Email);
+                    cmd.Parameters.AddWithValue("@roleid", us.Role_Id);
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
-            return true;
+        }
+
+        public users getdata(string Email, string password)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "select user_id, username , Role_Id from users where Email = @email and password_hash = @password";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@email", Email);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new users
+                            {
+                                Id = reader.GetInt32("user_id"),
+                                Username = reader.GetString("username"),
+                                //Password = reader.GetString("password_hash"),
+                                Role_Id = reader.GetInt32("Role_Id")
+                                //Email = reader.GetString("Email")
+                            };
+                        }
+
+                    }
+                }
+            }
+            return null;
         }
     }
 }

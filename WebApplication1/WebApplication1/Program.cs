@@ -1,6 +1,9 @@
 ﻿//using WebApplication1.DAl;
 //using WebApplication1.Interfaces;
 
+using WebApplication1.DAL;
+using WebApplication1.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,13 +21,18 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+
+
 // ✅ Initialize DatabaseHelper BEFORE building the app
 var connectionString = builder.Configuration.GetConnectionString("MyConnection");
 DatabaseHelper.Init(connectionString);
 
-
+builder.Services.AddScoped<IuserDAL , UsersDAL>();
 
 var app = builder.Build();
+
+builder.Services.AddSession();
+app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -45,6 +53,6 @@ app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Signup}/{id?}");
+    pattern: "{controller=Customer}/{action=Add}/{id?}");
 
 app.Run();
