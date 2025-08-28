@@ -5,7 +5,9 @@ namespace WebApplication1.Interfaces
     public interface Icustomer
     {
         bool addcustomer(customer cust);
-        customer retreivecustomers();
-        bool deletecustomer(string username);
+        List<customer> retreivecustomers();
+        bool deletecustomer(int id);
+        bool editcustomer(customer customer);
+        customer GetCustomerById(int id);
     }
 }

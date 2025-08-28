@@ -1,0 +1,33 @@
+﻿@{
+	ViewData["Title"] = "Signup";
+}
+
+@model WebApplication1.Models.customer
+
+<h2>Edit Customer</h2>
+
+<form asp-action ="Edit" method="post">
+	<input type="hidden" asp-for="customer_id"/>
+	<div class="form-group">
+		<label asp-for="first_name">First Name</label>
+		<input class="form-control" asp-for="first_name"></input>
+	</div>
+
+	<div class="form-group">
+		<label>Last Name</label>
+		<input class="form-control" asp-for="last_name"></input>
+	</div>
+
+	<div class="form-group">
+		<label>Username</label>
+		<input class="form-control" asp-for="phone"></input>
+	</div>
+
+	<div class="form-group">
+		<label>Username</label>
+		<input class="form-control" asp-for="address"></input>
+	</div>
+	<button type="submit" class="btn btn-dark">Edit</button>
+	<button asp-action="Show" class="btn btn-danger">Cancel</button>
+
+</form>

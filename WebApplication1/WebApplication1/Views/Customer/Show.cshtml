@@ -1,0 +1,35 @@
+﻿    @{
+        ViewData["Title"] = "Show Customers";
+    }
+    @model IEnumerable<WebApplication1.Models.customer>
+    <h2>List of Customers</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First_name</th>
+                <th>Last_name</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var cust in Model)
+            {
+                <tr>
+                    <td>@cust.customer_id</td>
+                    <td>@cust.first_name</td>
+                    <td>@cust.last_name</td>
+                    <td>@cust.phone</td>
+                    <td>@cust.address</td>
+                    <td>
+                        <a asp-controller="Customer" asp-action="Edit" asp-route-id="@cust.customer_id" class="btn btn-danger">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Customer" asp-action="Delete" asp-route-id="@cust.customer_id" class="btn btn-danger">Delete</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

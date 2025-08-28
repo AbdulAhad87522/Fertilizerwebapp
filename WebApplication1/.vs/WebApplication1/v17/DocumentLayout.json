@@ -7,36 +7,44 @@
       "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\dal\\customerdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\dal\\customerdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\dal\\usersdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\dal\\usersdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\interfaces\\icustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\interfaces\\icustomer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\views\\customer\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\customer\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\views\\customer\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\customer\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\views\\customer\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\customer\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\dal\\usersdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\dal\\usersdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\views\\customer\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\customer\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4C56F9F-F4F1-4C85-8421-87359EA99B48}|WebApplication1\\WebApplication1.csproj|c:\\users\\user\\desktop\\fertilizerwebapp\\webapplication1\\webapplication1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -70,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,67 +98,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Customerdal.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\Customerdal.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\DAL\\Customerdal.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\Customerdal.cs",
-              "RelativeToolTip": "WebApplication1\\DAL\\Customerdal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T07:23:14.985Z",
+              "DocumentIndex": 3,
+              "Title": "Show.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Show.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Customer\\Show.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Show.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Customer\\Show.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-27T09:43:20.478Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Icustomer.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Interfaces\\Icustomer.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Interfaces\\Icustomer.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Interfaces\\Icustomer.cs",
               "RelativeToolTip": "WebApplication1\\Interfaces\\Icustomer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T07:22:54.822Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Controllers\\AccountController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABGAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwB8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-26T06:20:20.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsersDAL.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\UsersDAL.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\DAL\\UsersDAL.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\UsersDAL.cs",
-              "RelativeToolTip": "WebApplication1\\DAL\\UsersDAL.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADwvxkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T10:58:10.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "customer.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\customer.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\customer.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\customer.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T07:07:30.724Z",
               "EditorCaption": ""
             },
             {
@@ -161,27 +143,40 @@
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\CustomerController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Controllers\\CustomerController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAowG4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T07:03:46.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Add.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Add.cshtml",
-              "RelativeDocumentMoniker": "WebApplication1\\Views\\Customer\\Add.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Add.cshtml",
-              "RelativeToolTip": "WebApplication1\\Views\\Customer\\Add.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-27T07:05:24.331Z",
+              "DocumentIndex": 1,
+              "Title": "Customerdal.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\Customerdal.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\DAL\\Customerdal.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\Customerdal.cs",
+              "RelativeToolTip": "WebApplication1\\DAL\\Customerdal.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwFQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T07:23:14.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Edit.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Customer\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Edit.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Customer\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-28T04:56:37.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Signup.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Account\\Signup.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Signup.cshtml",
@@ -189,21 +184,7 @@
               "RelativeToolTip": "WebApplication1\\Views\\Account\\Signup.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T06:33:07.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "users.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\users.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\users.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\users.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T06:09:04.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T06:33:07.862Z"
             },
             {
               "$type": "Document",
@@ -213,14 +194,61 @@
               "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Program.cs",
               "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T06:25:09.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T06:25:09.186Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Add.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Customer\\Add.cshtml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Customer\\Add.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Customer\\Add.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-27T07:05:24.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsersDAL.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\UsersDAL.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\DAL\\UsersDAL.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\DAL\\UsersDAL.cs",
+              "RelativeToolTip": "WebApplication1\\DAL\\UsersDAL.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAUwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T10:58:10.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "customer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\customer.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\customer.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\customer.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-27T07:07:30.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "users.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\users.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\users.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Models\\users.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T06:09:04.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Account\\Login.cshtml",
@@ -228,12 +256,11 @@
               "RelativeToolTip": "WebApplication1\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T06:32:21.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T06:32:21.482Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "WebApplication1.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
               "RelativeDocumentMoniker": "WebApplication1\\WebApplication1.csproj",
@@ -241,12 +268,11 @@
               "RelativeToolTip": "WebApplication1\\WebApplication1.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-26T06:25:26.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T06:25:26.178Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\appsettings.json",
               "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
@@ -254,12 +280,11 @@
               "RelativeToolTip": "WebApplication1\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-26T06:34:51.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-26T06:34:51.522Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
@@ -271,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Fertilizerwebapp\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
