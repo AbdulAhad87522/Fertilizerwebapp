@@ -1,0 +1,74 @@
+# Build results
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Visual Studio Code files
+.vscode/
+
+# Rider / JetBrains
+.idea/
+
+# Logs
+*.log
+logs/
+Logs/
+
+# Dependency folders
+node_modules/
+bower_components/
+wwwroot/lib/
+
+# Publish output
+publish/
+*.pubxml
+*.publishsettings
+
+# Package directories
+packages/
+*.nupkg
+*.snupkg
+
+# Database files
+*.mdf
+*.ldf
+
+# Secret files
+appsettings.*.json
+!appsettings.json    # Keep base config, ignore dev/prod/test
+secrets.json
+
+# Coverage reports
+*.coverage
+*.coveragexml
+TestResults/
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# User-specific
+*.vspscc
+*.vssscc
+.vs/
+
+# Temporary
+*.tmp
+*.temp
+*.bak
+
+# Azure
+*.PublishSettings
