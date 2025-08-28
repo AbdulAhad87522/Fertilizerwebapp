@@ -29,4 +29,4 @@ It is designed to handle products, customers, sales, purchases, and inventory wi
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/AbdulAhad87522/Fertilizerwebapp.git
