@@ -1,4 +1,4 @@
-# 🛒 Shop Management System (ASP.NET Core + MySQL)
+# 🛒 Fertilizer Shop Management System (ASP.NET Core + MySQL)
 
 This project is a **Shop Management System** built using **ASP.NET Core MVC** with **MySQL** as the database.  
 It is designed to handle products, customers, sales, purchases, and inventory with CRUD operations.
@@ -16,12 +16,46 @@ It is designed to handle products, customers, sales, purchases, and inventory wi
 
 ---
 
+# 🖥️ Laptop Shop Management System
+
+A **Laptop Shop Management System** built using **ASP.NET Core** with **MySQL** as the database.  
+This system supports product management, sales, invoicing, and barcode scanning for faster operations.
+
+---
+
+## 🚀 Features
+- 📦 **Product Management** (Add, update, delete, search products)
+- 🏷️ **Barcode Scanning** integration for quick sales
+- 🧾 **Invoice Generation** (A4 + Thermal Receipt formats)
+- 👥 **Customer Management** (Walk-in & Regular customers)
+- 💳 **Payment Tracking** (Full payment & due tracking)
+- 📊 **Stock Management** with automatic updates
+- 🖨️ **PDF Printing** for invoices and receipts
+
+---
+
 ## 🛠️ Tech Stack
-- **Backend:** ASP.NET Core MVC (C#)
-- **Database:** MySQL  
-- **ORM / Data Access:** ADO.NET (with parameterized queries)  
-- **Frontend:** Razor Pages, Bootstrap, jQuery  
-- **PDF Printing:** QuestPDF (for invoices & receipts)
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="ASP.NET Core" width="70" height="70"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL" width="100" height="60"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" width="70" height="70"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Windows_logo_-_2021.svg" alt="Windows Forms" width="70" height="70"/>
+  <img src="https://avatars.githubusercontent.com/u/86224646?s=200&v=4" alt="QuestPDF" width="70" height="70"/>
+</p>
+
+---
+
+## 📂 Project Structure
+
+📦 Fertilizer
+┣ 📂 Controllers # ASP.NET Core Controllers
+┣ 📂 Models # Entity Models
+┣ 📂 Views # Razor Views
+┣ 📂 Services # Business Logic
+┣ 📂 wwwroot # Static Files
+┣ 📜 Program.cs # App Entry
+┗ 📜 README.md
 
 ---
 
