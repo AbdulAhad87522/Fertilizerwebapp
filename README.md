@@ -37,11 +37,12 @@ This system supports product management, sales, invoicing, and barcode scanning 
 ## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="ASP.NET Core" width="70" height="70"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL" width="100" height="60"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" width="70" height="70"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Windows_logo_-_2021.svg" alt="Windows Forms" width="70" height="70"/>
-  <img src="https://avatars.githubusercontent.com/u/86224646?s=200&v=4" alt="QuestPDF" width="70" height="70"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt="ASP.NET Core" width="70" height="70"/><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL" width="100" height="60"/><br>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" width="70" height="70"/><br>
+  <img src="https://learn.microsoft.com/en-us/media/logos/logo_net.svg" alt=".NET" width="70" height="70"/><br>
+  <img src="https://i.ibb.co/7YF8vR7/windows-forms.png" alt="Windows Forms" width="70" height="70"/><br>
+  <img src="https://raw.githubusercontent.com/QuestPDF/QuestPDF/main/assets/logo.png" alt="QuestPDF" width="70" height="70"/>
 </p>
 
 ---
