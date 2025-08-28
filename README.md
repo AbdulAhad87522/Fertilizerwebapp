@@ -41,8 +41,8 @@ This system supports product management, sales, invoicing, and barcode scanning 
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL" width="100" height="60"/><br>
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" width="70" height="70"/><br>
   <img src="https://learn.microsoft.com/en-us/media/logos/logo_net.svg" alt=".NET" width="70" height="70"/><br>
-  <img src="https://i.ibb.co/7YF8vR7/windows-forms.png" alt="Windows Forms" width="70" height="70"/><br>
-  <img src="https://raw.githubusercontent.com/QuestPDF/QuestPDF/main/assets/logo.png" alt="QuestPDF" width="70" height="70"/>
+ <!-- Visual Studio 2022 Community -->
+  <img src="https://i.imgur.com/HxC0INz.png" alt="Visual Studio 2022 Community Edition" width="70" height="70"/>
 </p>
 
 ---
