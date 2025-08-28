@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Add Products";
+}
+@model Products
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddProduct</title>
+</head>
+<body>
+    <div class="container mt-2">
+        <h1>Add Products</h1>
+        <form method="post">
+            <div class="form-group">
+                <label>Name</label>
+                    <input class="form-control" asp-for="name"></input>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                    <input class="form-control" asp-for="description"></input>
+            </div>
+
+            <div class="form-group">
+                <label>Sale Price</label>
+                    <input class="form-control" asp-for="sale_price"></input>
+            </div>
+
+            <div class="form-group">
+                <label>Quantity</label>
+                    <input class="form-control" asp-for="quantity"></input>
+            </div>
+            <button type="submit" class="btn btn-outline-primary">Add</button>
+
+            @if(ViewBag.Message != null)
+            {
+                <script>
+                    alert(`@ViewBag.Message`);
+                </script>
+            }
+
+        </form>
+    </div>
+</body>
+</html>

@@ -64,7 +64,6 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-
         public IActionResult Edit(int id)
         {
             
@@ -94,24 +93,40 @@ namespace WebApplication1.Controllers
                 return View();
         }
 
-        [HttpGet]
+        //[HttpGet]
+        //public IActionResult Delete(int id)
+        //{
+        //    var customer = _customerdal.GetCustomerById(id);
+        //    if(customer == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return View(customer);
+        //}
+
+        //[HttpPost, ActionName("Delete")]
+        //public IActionResult Delete(int id)
+        //{
+        //       bool deleted = _customerdal.deletecustomer(id);
+        //    if (deleted)
+        //    {
+        //        return RedirectToAction("Show", "Customer");
+        //    }
+        //    else 
+
+        //        return NotFound();
+        //}
+        [HttpPost]
         public IActionResult Delete(int id)
         {
-            var customer = _customerdal.GetCustomerById(id);
-            if(customer == null)
+            bool result = _customerdal.deletecustomer(id);
+            if (result)
             {
-                return NotFound();
+                return RedirectToAction("Show"); // back to list
             }
-            return View(customer);
+            return BadRequest("Failed to delete customer");
         }
 
-        [HttpPost, ActionName("Delete")]
-        public IActionResult Delete()
-        {
-               
-
-            return View();
-        }
 
         public IActionResult Show()
         {

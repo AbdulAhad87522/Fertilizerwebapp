@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "List of Products";
+}
+
+@model IEnumerable<WebApplication1.Models.Products>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>show</title>
+</head>
+<body>
+    <h2>List of Products</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Sale Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var produc in Model)
+            {
+                <tr>
+                    <td>@produc.product_id</td>
+                    <td>@produc.name</td>
+                    <td>@produc.description</td>
+                    <td>@produc.sale_price</td>
+                    <td>@produc.quantity</td>
+                    <td>
+                        <a class="btn btn-danger" asp-controller="ProductController1" asp-action="EditProduct" asp-route-id="@produc.product_id">Edit</a>
+                    <td>
+                        <!-- Delete Button triggers modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="@produc.product_id">
+                            Delete
+                        </button>
+
+                    </td>
+                    </td>
+                </tr>
+            }
+        </tbody>
+   </table>
+
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this Product?
+                </div>
+                <div class="modal-footer">
+                    <form id="deleteForm" method="post">
+                        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+@section Scripts {
+    <script>
+        var deleteForm = document.getElementById('deleteForm');
+        var deleteModal = document.getElementById('confirmDeleteModal');
+
+        deleteModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var productid = button.getAttribute('data-id');
+
+            // Update form action dynamically
+            deleteForm.action = '/ProductController1/DeleteProduct/' + productid;
+        });
+    </script>
+}
+

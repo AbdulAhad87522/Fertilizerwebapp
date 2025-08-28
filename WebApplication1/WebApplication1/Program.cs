@@ -29,6 +29,7 @@ DatabaseHelper.Init(connectionString);
 
 builder.Services.AddScoped<IuserDAL , UsersDAL>();
 builder.Services.AddScoped<Icustomer, Customerdal>();
+builder.Services.AddScoped<IProductsDAL, Productdal>();
 
 var app = builder.Build();
 
@@ -54,6 +55,6 @@ app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Customer}/{action=Show}/{id?}");
+    pattern: "{controller=ProductController1}/{action=Show}/{id?}");
 
 app.Run();
