@@ -60,9 +60,20 @@ namespace WebApplication1.Controllers
                 return View();
             }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult Show()
         {
+            try
+            {
+
+                var suppliers = _supplierdal.retrievesuppliers();
+
+                return View(suppliers);
+            }
+            catch(Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+            }
             return View();
         }
 

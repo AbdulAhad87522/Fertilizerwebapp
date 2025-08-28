@@ -56,6 +56,6 @@ app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Supplier}/{action=Add}/{id?}");
+    pattern: "{controller=Supplier}/{action=Show}/{id?}");
 
 app.Run();

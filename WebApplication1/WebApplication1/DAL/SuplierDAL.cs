@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data;
+using MySql.Data.MySqlClient;
 using WebApplication1.Interfaces;
 using WebApplication1.Models;
 
@@ -49,7 +50,40 @@ namespace WebApplication1.DAL
 
         public List<Suppliers> retrievesuppliers()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Suppliers> suppliers = new List<Suppliers>();
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = "select * from suppliers";
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var supplier = new Suppliers
+                                {
+                                    supplier_id = reader.IsDBNull("supplier_id") ? 0 : reader.GetInt32("supplier_id"),
+                                    name = reader.IsDBNull("name") ? string.Empty : reader.GetString("name"),
+                                    phone = reader.IsDBNull("phone") ? string.Empty : reader.GetString("phone"),
+                                    address = reader.IsDBNull("address") ? string.Empty : reader.GetString("address")
+                                };
+                                suppliers.Add(supplier);
+                            }
+                        }
+                    }
+
+                }
+                return suppliers;
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
         }
     }
 }
