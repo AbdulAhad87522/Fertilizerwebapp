@@ -109,26 +109,34 @@ namespace WebApplication1.DAL
 
         public bool updateproduct(Products products)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            try
             {
-                conn.Open();
-
-                string query = "UPDATE products " +
-                               "SET name = @name, description = @description, sale_price = @sale_price  , quantity = @quantity " +
-                               "WHERE product_id = @id";
-
-                using (var cmd = new MySqlCommand(query, conn))
+                using (var conn = DatabaseHelper.GetConnection())
                 {
-                    cmd.Parameters.AddWithValue("@name", products.name);
-                    cmd.Parameters.AddWithValue("@description", products.description);
-                    cmd.Parameters.AddWithValue("@sale_price", products.sale_price);
-                    cmd.Parameters.AddWithValue("@quantity", products.quantity);
-                    cmd.Parameters.AddWithValue("@id", products.product_id);
+                    conn.Open();
+
+                    string query = "UPDATE products " +
+                                   "SET name = @name, description = @description, sale_price = @sale_price  , quantity = @quantity " +
+                                   "WHERE product_id = @id";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", products.name);
+                        cmd.Parameters.AddWithValue("@description", products.description);
+                        cmd.Parameters.AddWithValue("@sale_price", products.sale_price);
+                        cmd.Parameters.AddWithValue("@quantity", products.quantity);
+                        cmd.Parameters.AddWithValue("@id", products.product_id);
 
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0; // returns true if update succeeded
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0; // returns true if update succeeded
+                    }
                 }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
     }

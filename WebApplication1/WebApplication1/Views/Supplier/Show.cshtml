@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Detail of the suppliers";
+}
+
+@model IEnumerable<WebApplication1.Models.Suppliers>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+
+            <th>Supplier ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var supp in Model)
+        {
+            <tr>
+                <td>@supp.supplier_id</td>
+                <td>@supp.name</td>
+                <td>@supp.phone</td>
+                <td>@supp.address</td>
+                <td>
+                    <a  class="btn btn-danger">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+      </tbody>
+</table>
