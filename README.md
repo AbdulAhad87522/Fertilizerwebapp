@@ -41,9 +41,11 @@ This system supports product management, sales, invoicing, and barcode scanning 
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL" width="100" height="60"/><br>
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" width="70" height="70"/><br>
   <img src="https://learn.microsoft.com/en-us/media/logos/logo_net.svg" alt=".NET" width="70" height="70"/><br>
- <!-- Visual Studio 2022 Community -->
-  <img src="https://i.imgur.com/HxC0INz.png" alt="Visual Studio 2022 Community Edition" width="70" height="70"/>
+  <!-- Visual Studio 2022 Community -->
+<!--   <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Visual_Studio_Icon_2022.svg" 
+        width="70" height="70"/> -->
 </p>
+
 
 ---
 
