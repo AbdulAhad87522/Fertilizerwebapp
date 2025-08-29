@@ -9,9 +9,10 @@
 <form id="batchForm" asp-action="Create" method="post">
     <!-- Row for Batch Info -->
     <div class="row mb-3">
-        <div class="col-md-4">
+        <div class="col-md-4"
             <label>Batch Name</label>
-            <input asp-for="batch_name" id="batchname" class="form-control" />
+            <input asp-for="batch_name" id="batchname" style="width:200px;" placeholder="Enter unique batch name" class="form-control" />
+            <button type="button" id="checkBatch" class="btn btn-info">Check</button>
         </div>
 
         <!-- 🔹 Supplier Autocomplete -->
@@ -104,6 +105,59 @@
                 return false;
             }
         });
+
+                $("#checkBatch").click(function () {
+            var batchName = $("#batchname").val();
+            if (batchName.trim() === "") {
+                alert("Please enter a batch name.");
+                return;
+            }
+
+            $.get("/batch/CheckBatchName", { batchName: batchName }, function (response) {
+                if (response.exists) {
+                    alert("⚠️ This batch already exists!");
+                } else {
+                    alert("✅ Batch name is available.");
+                }
+            });
+        });
+
+
+                // ✅ Restore supplier name if already chosen
+        @if (Model != null && Model.supplier_id > 0)
+        {
+            <text>
+                    $(document).ready(function() {
+                        $("#supplierId").val("@Model.supplier_id");
+                        $("#supplierSearch").val("@Model.SupplierName"); // now works
+                    });
+            </text>
+        }
+
+        // ✅ Restore products table if already added
+        @if (Model?.BatchDetails != null && Model.BatchDetails.Any())
+        {
+            var index = 0;
+            foreach (var d in Model.BatchDetails)
+            {
+                <text>
+                            $(document).ready(function() {
+                                $("#productsTable tbody").append(
+                                    "<tr>" +
+                                        "<td>@d.ProductName</td>" +   // now works
+                                        "<td>@d.cost_price</td>" +
+                                        "<td>@d.quantity_recived</td>" +
+                                        '<input type="hidden" name="BatchDetails[@index].product_id" value="@d.product_id" />' +
+                                        '<input type="hidden" name="BatchDetails[@index].cost_price" value="@d.cost_price" />' +
+                                        '<input type="hidden" name="BatchDetails[@index].quantity_recived" value="@d.quantity_recived" />' +
+                                    "</tr>"
+                                );
+                            });
+                </text>
+                index++;
+            }
+        }
+
 
         // ✅ Product autocomplete
         $("#productSearch").autocomplete({

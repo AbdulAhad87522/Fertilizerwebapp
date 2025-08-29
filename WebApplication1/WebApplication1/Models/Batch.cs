@@ -15,6 +15,7 @@ namespace WebApplication1.Models
         public List<BatchDetail> BatchDetails { get; set; }
         public decimal total_price { get; set; }
         public decimal paid_amount { get; set; }
+        public string SupplierName { get; set; }
     }
 
     public class BatchDetail
@@ -30,6 +31,7 @@ namespace WebApplication1.Models
 
         [Required]
         public int quantity_recived { get; set; }
+        public string ProductName { get; set; }
     }
     
 

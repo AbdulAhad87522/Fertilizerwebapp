@@ -88,11 +88,27 @@ namespace WebApplication1.DAL
                         tran.Commit();
                         return true;
                     }
-                    catch
+                    catch(Exception e)
                     {
+                        Console.WriteLine(e);
                         tran.Rollback();
                         throw;
                     }
+                }
+            }
+        }
+
+        public bool BatchExists(string batchName)
+        {
+            using (var conn = DatabaseHelper.GetConnection()) // from your DatabaseHelper
+            {
+                string query = "SELECT COUNT(*) FROM batches WHERE batch_name = @batchName";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@batchName", batchName);
+                    conn.Open();
+                    var count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
                 }
             }
         }

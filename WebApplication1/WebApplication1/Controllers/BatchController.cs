@@ -51,18 +51,61 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (_batchDAL.AddBatchWithDetails(batch, batch.BatchDetails))
+                try
                 {
-                    return RedirectToAction("Login", "Account");
+                    if (_batchDAL.AddBatchWithDetails(batch, batch.BatchDetails))
+                    {
+                        return RedirectToAction("Login", "Account");
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Data not saved";
+                        return View(batch);
+                    }
                 }
-                ViewBag.Message = "data not saved";
+                catch (Exception ex)
+                {
+                    ViewBag.Message = $"Database Error: {ex.Message}";
+
+                    // Populate helper names
+                    //var supplier = _supplierDAL.GetsupplierById(batch.supplier_id);
+                    //batch.SupplierName = supplier?.name;
+
+                    //foreach (var d in batch.BatchDetails)
+                    //{
+                    //    var product = _productDAL.getproductbyid(d.product_id);
+                    //    d.ProductName = product?.name;
+                    //}
+
+                    return View(batch);
+                }
+
             }
             else
             {
-                ViewBag.Message = "invalid input";
+                ViewBag.Message = "Invalid input";
+               
             }
+            // ✅ Rehydrate SupplierName
+            var supplier = _supplierDAL.GetsupplierById(batch.supplier_id);
+            batch.SupplierName = supplier?.name;
 
+            // ✅ Rehydrate each ProductName
+            if (batch.BatchDetails != null)
+            {
+                foreach (var d in batch.BatchDetails)
+                {
+                    var product = _productDAL.getproductbyid(d.product_id);
+                    d.ProductName = product?.name;
+                }
+            }
             return View(batch);
+        }
+        [HttpGet]
+        public IActionResult CheckBatchName(string batchName)
+        {
+            var exists = _batchDAL.BatchExists(batchName);
+            return Json(new { exists });
         }
 
 
