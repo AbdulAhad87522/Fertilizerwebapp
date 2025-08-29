@@ -11,10 +11,10 @@
     <div class="row mb-3">
         <div class="col-md-4">
             <label>Batch Name</label>
-            <input asp-for="batch_name" class="form-control" />
+            <input asp-for="batch_name" id="batchname" class="form-control" />
         </div>
 
-        <!-- 🔹 Supplier Autocomplete (Textbox + Hidden) -->
+        <!-- 🔹 Supplier Autocomplete -->
         <div class="col-md-4">
             <label>Supplier</label>
             <input type="text" id="supplierSearch" placeholder="Search supplier..." class="form-control" />
@@ -63,7 +63,14 @@
         <tbody></tbody>
     </table>
 
-    <button type="submit" class="btn btn-success">Save Batch</button>
+    <button type="submit" id="saveButton" class="btn btn-success">Save Batch</button>
+
+    @if (ViewBag.Message != null)
+    {
+        <script>
+            alert(`@ViewBag.Message`);
+        </script>
+    }
 </form>
 
 @section Scripts {
@@ -78,7 +85,9 @@
             source: '/Supplier/Search',
             minLength: 0,
             select: function (event, ui) {
-                $("#supplierId").val(ui.item.id);  // save supplier id
+                $("#supplierSearch").val(ui.item.value); // show supplier name
+                $("#supplierId").val(ui.item.id);        // hidden supplier id
+                return false;
             }
         });
 
@@ -87,13 +96,15 @@
             source: '/ProductController1/Search',
             minLength: 0,
             select: function (event, ui) {
-                $("#productId").val(ui.item.id);  // save product id
+                $("#productSearch").val(ui.item.value); // show product name
+                $("#productId").val(ui.item.id);        // hidden product id
+                return false;
             }
         });
 
         // ✅ Add product to table and hidden inputs
         $("#addProduct").click(function (e) {
-             e.preventDefault();
+            e.preventDefault();
             var productId = $("#productId").val();
             var productName = $("#productSearch").val();
             var costPrice = $("#costPrice").val();
@@ -104,15 +115,17 @@
                 return;
             }
 
-            // add visible row
-            $("#productsTable tbody").append(
-                "<tr><td>" + productName + "</td><td>" + costPrice + "</td><td>" + qty + "</td></tr>"
-            );
+                   $("#productsTable tbody").append(
+            "<tr>" +
+                "<td>" + productName + "</td>" +
+                "<td>" + costPrice + "</td>" +
+                "<td>" + qty + "</td>" +
+                '<input type="hidden" name="BatchDetails[' + productIndex + '].product_id" value="' + productId + '" />' +
+                '<input type="hidden" name="BatchDetails[' + productIndex + '].cost_price" value="' + costPrice + '" />' +
+                '<input type="hidden" name="BatchDetails[' + productIndex + '].quantity_recived" value="' + qty + '" />' +
+            "</tr>"
+        );
 
-            // add hidden inputs for model binding
-            $("#batchForm").append('<input type="hidden" name="details[' + productIndex + '].product_id" value="' + productId + '" />');
-            $("#batchForm").append('<input type="hidden" name="details[' + productIndex + '].cost_price" value="' + costPrice + '" />');
-            $("#batchForm").append('<input type="hidden" name="details[' + productIndex + '].quantity_recived" value="' + qty + '" />');
 
             productIndex++;
 
@@ -121,6 +134,17 @@
             $("#productId").val("");
             $("#costPrice").val("");
             $("#quantity").val("");
+        });
+
+        // ✅ Optional: clear form after save
+        $("#saveButton").click(function () {
+            // allow form submission, but clear afterwards
+            setTimeout(() => {
+                $("#batchname").val("");
+                $("#supplierSearch").val("");
+                $("#supplierId").val("");
+                $("#productsTable tbody").empty();
+            }, 500);
         });
     </script>
 }

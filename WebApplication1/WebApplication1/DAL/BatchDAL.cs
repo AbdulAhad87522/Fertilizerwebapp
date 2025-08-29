@@ -7,7 +7,7 @@ namespace WebApplication1.DAL
     public class BatchDAL :IBatchDAL
     {
         public bool AddBatchWithDetails(Batch batch, List<BatchDetail> details)
-        {
+        {    
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
@@ -37,6 +37,18 @@ namespace WebApplication1.DAL
                                 cmd.Parameters.AddWithValue("@qty", d.quantity_recived);
                                 cmd.ExecuteNonQuery();
                             }
+
+                            // 2️⃣ Update product quantity (stock = oldquantity + new received)
+                            string updateQuery = @"UPDATE products 
+                                           SET quantity = quantity + @qty 
+                                           WHERE product_id = @id";
+                            using (var cmdUpdate = new MySqlCommand(updateQuery, conn, tran))
+                            {
+                                cmdUpdate.Parameters.AddWithValue("@qty", d.quantity_recived);
+                                cmdUpdate.Parameters.AddWithValue("@id", d.product_id);
+                                cmdUpdate.ExecuteNonQuery();
+                            }
+
                         }
 
                         tran.Commit();
@@ -44,10 +56,33 @@ namespace WebApplication1.DAL
                     }
                     catch
                     {
+                        Console.WriteLine("error from the database");
                         tran.Rollback();
                         throw;
                     }
                 }
+            }
+        }
+
+        private int oldquantity(int id)
+        {
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string query = "SELECT quantity FROM products WHERE product_id = @id;";
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? Convert.ToInt32(result) : 0;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error in DL: " + e.Message);
             }
         }
 

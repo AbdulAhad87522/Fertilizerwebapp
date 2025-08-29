@@ -24,16 +24,48 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public IActionResult Create(Batch batch, List<BatchDetail> details)
+        //{
+        //    //if (ModelState.IsValid)
+        //    {
+        //        if (_batchDAL.AddBatchWithDetails(batch, details))
+        //        {
+        //            return RedirectToAction("Login", "Account"); // later show all batches
+        //        }
+        //        else
+        //        {
+        //            ViewBag.Message = "data not saved";
+        //        }
+        //        //}
+        //        //else
+        //        //{
+        //        //    ViewBag.Message = "invalid input";
+        //        //}
+        //        return View(batch);
+        //    }
+        //}
+
         [HttpPost]
-        public IActionResult Create(Batch batch, List<BatchDetail> details)
+        public IActionResult Create(Batch batch)
         {
             if (ModelState.IsValid)
             {
-                _batchDAL.AddBatchWithDetails(batch, details);
-                return RedirectToAction("Index"); // later show all batches
+                if (_batchDAL.AddBatchWithDetails(batch, batch.BatchDetails))
+                {
+                    return RedirectToAction("Login", "Account");
+                }
+                ViewBag.Message = "data not saved";
             }
+            else
+            {
+                ViewBag.Message = "invalid input";
+            }
+
             return View(batch);
         }
-    }
 
+
+
+    }
 }
