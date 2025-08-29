@@ -13,6 +13,8 @@ namespace WebApplication1.Models
         [DataType(DataType.Date)]
         public DateTime recieved_date { get; set; }
         public List<BatchDetail> BatchDetails { get; set; }
+        public decimal total_price { get; set; }
+        public decimal paid_amount { get; set; }
     }
 
     public class BatchDetail
