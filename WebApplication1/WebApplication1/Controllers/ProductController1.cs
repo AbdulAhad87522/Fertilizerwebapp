@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication1.DAL;
 using WebApplication1.Interfaces;
 using WebApplication1.Models;
 
@@ -125,7 +126,14 @@ namespace WebApplication1.Controllers
                 }
         }
 
-       
+        [HttpGet]
+        public JsonResult Search(string term)
+        {
+            var results = _productdal.SearchProducts(term); // DAL function
+            return Json(results.Select(p => new { id = p.product_id, label = p.name, value = p.name }));
+        }
+
+
 
     }
 }

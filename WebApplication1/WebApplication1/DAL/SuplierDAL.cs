@@ -35,17 +35,77 @@ namespace WebApplication1.DAL
 
         public bool deletesupplier(int id)
         {
-            throw new NotImplementedException();
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "delete from suppliers where supplier_id = @id";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
         }
 
         public bool editsupplier(Suppliers supplier)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+
+                    string query = "UPDATE suppliers " +
+                                   "SET name = @name, phone = @phone, address = @address " +
+                                   "WHERE supplier_id = @id";
+
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", supplier.name);
+                        cmd.Parameters.AddWithValue("@phone", supplier.phone);
+                        cmd.Parameters.AddWithValue("@address", supplier.address);
+                        cmd.Parameters.AddWithValue("@id", supplier.supplier_id);
+
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0; // returns true if update succeeded
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public Suppliers GetsupplierById(int id)
         {
-            throw new NotImplementedException();
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM suppliers WHERE supplier_id = @id";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Suppliers
+                            {
+                                supplier_id = reader.GetInt32("supplier_id"),
+                                name = reader.GetString("name"),
+                                phone = reader.GetString("phone"),
+                                address = reader.GetString("address")
+                            };
+                        }
+                    }
+                }
+            }
+            return null; // not found
         }
 
         public List<Suppliers> retrievesuppliers()
@@ -85,5 +145,35 @@ namespace WebApplication1.DAL
                 throw;
             }
         }
+
+        public List<Suppliers> SearchSuppliers(string term)
+        {
+            var suppliers = new List<Suppliers>();
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT supplier_id, name FROM suppliers WHERE name LIKE @term";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@term", "%" + term + "%");
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            suppliers.Add(new Suppliers
+                            {
+                                supplier_id = reader.GetInt32("supplier_id"),
+                                name = reader.GetString("name"),
+                                address = "",
+                                phone = ""
+                            });
+                        }
+                    }
+                }
+            }
+            return suppliers;
+        }
+
+
     }
 }

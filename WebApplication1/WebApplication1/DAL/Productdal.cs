@@ -139,5 +139,40 @@ namespace WebApplication1.DAL
                 throw;
             }
         }
+
+        public List<Products> SearchProducts(string term)
+        {
+            var products = new List<Products>();
+
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT product_id, name FROM products WHERE name LIKE @term";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@term", "%" + term + "%");
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            products.Add(new Products
+                            {
+                                product_id = reader.GetInt32("product_id"),
+                                name = reader.GetString("name"),
+                                description = "", // placeholder
+                                sale_price = 0,   // placeholder
+                                quantity = 0      // placeholder
+                            });
+                        }
+                    }
+                }
+            }
+
+            return products;
+        }
+
+
     }
 }

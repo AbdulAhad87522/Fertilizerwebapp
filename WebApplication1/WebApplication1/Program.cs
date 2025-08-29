@@ -31,6 +31,7 @@ builder.Services.AddScoped<IuserDAL , UsersDAL>();
 builder.Services.AddScoped<Icustomer, Customerdal>();
 builder.Services.AddScoped<IProductsDAL, Productdal>();
 builder.Services.AddScoped<Isupplierdal, SuplierDAL>();
+builder.Services.AddScoped<IBatchDAL, BatchDAL>();
 
 var app = builder.Build();
 
@@ -56,6 +57,6 @@ app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Supplier}/{action=Show}/{id?}");
+    pattern: "{controller=Batch}/{action=Create}/{id?}");
 
 app.Run();

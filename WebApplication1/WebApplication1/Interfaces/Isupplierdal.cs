@@ -9,5 +9,6 @@ namespace WebApplication1.Interfaces
         bool deletesupplier(int id);
         bool editsupplier(Suppliers supplier);
         Suppliers GetsupplierById(int id);
+        List<Suppliers> SearchSuppliers(string term);
     }
 }

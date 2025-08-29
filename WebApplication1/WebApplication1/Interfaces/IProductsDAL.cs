@@ -9,5 +9,7 @@ namespace WebApplication1.Interfaces
         List<Products> getproducts();
         Products getproductbyid(int id);
         bool updateproduct(Products products);
+
+        List<Products> SearchProducts(string term);
     }
 }

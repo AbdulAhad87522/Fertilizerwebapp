@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Add Batch";
+}
+
+@model WebApplication1.Models.Batch
+
+<h2>Create Batch</h2>
+
+<form id="batchForm" asp-action="Create" method="post">
+    <!-- Row for Batch Info -->
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label>Batch Name</label>
+            <input asp-for="batch_name" class="form-control" />
+        </div>
+
+        <!-- 🔹 Supplier Autocomplete (Textbox + Hidden) -->
+        <div class="col-md-4">
+            <label>Supplier</label>
+            <input type="text" id="supplierSearch" placeholder="Search supplier..." class="form-control" />
+            <input type="hidden" id="supplierId" name="supplier_id" />
+        </div>
+
+        <div class="col-md-4">
+            <label>Received Date</label>
+            <input asp-for="recieved_date" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <hr />
+    <h4>Add Products</h4>
+
+    <!-- Row for Product Inputs -->
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label>Product</label>
+            <input type="text" id="productSearch" placeholder="Search product..." class="form-control" />
+            <input type="hidden" id="productId" />
+        </div>
+        <div class="col-md-3">
+            <label>Cost Price</label>
+            <input type="number" id="costPrice" placeholder="Cost Price" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label>Quantity</label>
+            <input type="number" id="quantity" placeholder="Quantity" class="form-control" />
+        </div>
+        <div class="col-md-2">
+            <label>&nbsp;</label>
+            <button type="button" id="addProduct" class="btn btn-primary w-100">Add</button>
+        </div>
+    </div>
+
+    <!-- Product Table -->
+    <table class="table table-bordered mt-3" id="productsTable">
+        <thead class="table-light">
+            <tr>
+                <th>Product</th>
+                <th>Cost Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success">Save Batch</button>
+</form>
+
+@section Scripts {
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+
+    <script>
+        var productIndex = 0;
+
+        // ✅ Supplier autocomplete
+        $("#supplierSearch").autocomplete({
+            source: '/Supplier/Search',
+            minLength: 0,
+            select: function (event, ui) {
+                $("#supplierId").val(ui.item.id);  // save supplier id
+            }
+        });
+
+        // ✅ Product autocomplete
+        $("#productSearch").autocomplete({
+            source: '/ProductController1/Search',
+            minLength: 0,
+            select: function (event, ui) {
+                $("#productId").val(ui.item.id);  // save product id
+            }
+        });
+
+        // ✅ Add product to table and hidden inputs
+        $("#addProduct").click(function (e) {
+             e.preventDefault();
+            var productId = $("#productId").val();
+            var productName = $("#productSearch").val();
+            var costPrice = $("#costPrice").val();
+            var qty = $("#quantity").val();
+
+            if (!productId || !productName.trim() || !costPrice || !qty) {
+                alert("Please fill all fields before adding.");
+                return;
+            }
+
+            // add visible row
+            $("#productsTable tbody").append(
+                "<tr><td>" + productName + "</td><td>" + costPrice + "</td><td>" + qty + "</td></tr>"
+            );
+
+            // add hidden inputs for model binding
+            $("#batchForm").append('<input type="hidden" name="details[' + productIndex + '].product_id" value="' + productId + '" />');
+            $("#batchForm").append('<input type="hidden" name="details[' + productIndex + '].cost_price" value="' + costPrice + '" />');
+            $("#batchForm").append('<input type="hidden" name="details[' + productIndex + '].quantity_recived" value="' + qty + '" />');
+
+            productIndex++;
+
+            // reset inputs
+            $("#productSearch").val("");
+            $("#productId").val("");
+            $("#costPrice").val("");
+            $("#quantity").val("");
+        });
+    </script>
+}
