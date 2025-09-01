@@ -46,9 +46,66 @@ namespace WebApplication1.Controllers
         //    }
         //}
 
+        //[HttpPost]
+        //public IActionResult Create(Batch batch)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            if (_batchDAL.AddBatchWithDetails(batch, batch.BatchDetails))
+        //            {
+        //                return RedirectToAction("Login", "Account");
+        //            }
+        //            else
+        //            {
+        //                ViewBag.Message = "Data not saved";
+        //                return View(batch);
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            ViewBag.Message = $"Database Error: {ex.Message}";
+
+
+
+        //            return View(batch);
+        //        }
+
+        //    }
+        //    else
+        //    {
+        //        ViewBag.Message = "Invalid input";
+
+        //    }
+        //    // ✅ Rehydrate SupplierName
+        //    var supplier = _supplierDAL.GetsupplierById(batch.supplier_id);
+        //    batch.SupplierName = supplier?.name;
+
+        //    // ✅ Rehydrate each ProductName
+        //    if (batch.BatchDetails != null)
+        //    {
+        //        foreach (var d in batch.BatchDetails)
+        //        {
+        //            var product = _productDAL.getproductbyid(d.product_id);
+        //            d.ProductName = product?.name;
+        //        }
+        //    }
+        //        return View(batch);
+        //}
+
         [HttpPost]
         public IActionResult Create(Batch batch)
         {
+            // Remove validation errors for display-only properties
+            ModelState.Remove("SupplierName");
+            if (batch.BatchDetails != null)
+            {
+                for (int i = 0; i < batch.BatchDetails.Count; i++)
+                {
+                    ModelState.Remove($"BatchDetails[{i}].ProductName");
+                }
+            }
             if (ModelState.IsValid)
             {
                 try
@@ -60,6 +117,10 @@ namespace WebApplication1.Controllers
                     else
                     {
                         ViewBag.Message = "Data not saved";
+
+                        // ✅ Rehydrate before returning view
+                        RehydrateBatch(batch);
+
                         return View(batch);
                     }
                 }
@@ -67,30 +128,37 @@ namespace WebApplication1.Controllers
                 {
                     ViewBag.Message = $"Database Error: {ex.Message}";
 
-                    // Populate helper names
-                    //var supplier = _supplierDAL.GetsupplierById(batch.supplier_id);
-                    //batch.SupplierName = supplier?.name;
-
-                    //foreach (var d in batch.BatchDetails)
-                    //{
-                    //    var product = _productDAL.getproductbyid(d.product_id);
-                    //    d.ProductName = product?.name;
-                    //}
+                    // ✅ Rehydrate before returning view
+                    RehydrateBatch(batch);
 
                     return View(batch);
                 }
-
             }
             else
             {
-                ViewBag.Message = "Invalid input";
-               
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                  .Select(e => e.ErrorMessage)
+                                  .ToList();
+
+                ViewBag.Message = "Invalid input: " + string.Join(" | ", errors);
+
+                // ✅ Rehydrate before returning view
+                RehydrateBatch(batch);
+
+                return View(batch);
             }
-            // ✅ Rehydrate SupplierName
+        }
+
+        /// <summary>
+        /// Helper method to repopulate SupplierName and ProductNames
+        /// </summary>
+        private void RehydrateBatch(Batch batch)
+        {
+            // Supplier
             var supplier = _supplierDAL.GetsupplierById(batch.supplier_id);
             batch.SupplierName = supplier?.name;
 
-            // ✅ Rehydrate each ProductName
+            // Products
             if (batch.BatchDetails != null)
             {
                 foreach (var d in batch.BatchDetails)
@@ -99,8 +167,9 @@ namespace WebApplication1.Controllers
                     d.ProductName = product?.name;
                 }
             }
-            return View(batch);
         }
+
+
         [HttpGet]
         public IActionResult CheckBatchName(string batchName)
         {

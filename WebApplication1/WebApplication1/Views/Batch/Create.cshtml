@@ -73,6 +73,7 @@
                 <th>Product</th>
                 <th>Cost Price</th>
                 <th>Quantity</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -96,15 +97,16 @@
         var productIndex = 0;
 
         // ✅ Supplier autocomplete
-        $("#supplierSearch").autocomplete({
+               $("#supplierSearch").autocomplete({
             source: '/Supplier/Search',
             minLength: 0,
             select: function (event, ui) {
-                $("#supplierSearch").val(ui.item.value); // show supplier name
-                $("#supplierId").val(ui.item.id);        // hidden supplier id
+                $("#supplierSearch").val(ui.item.value); // supplier name
+                $("#supplierId").val(ui.item.id);        // supplier_id (✅ important)
                 return false;
             }
         });
+
 
                 $("#checkBatch").click(function () {
             var batchName = $("#batchname").val();
@@ -160,18 +162,20 @@
 
 
         // ✅ Product autocomplete
-        $("#productSearch").autocomplete({
+                $("#productSearch").autocomplete({
             source: '/ProductController1/Search',
             minLength: 0,
             select: function (event, ui) {
-                $("#productSearch").val(ui.item.value); // show product name
-                $("#productId").val(ui.item.id);        // hidden product id
+                $("#productSearch").val(ui.item.value); // product name
+                $("#productId").val(ui.item.id);        // product_id (✅ important)
                 return false;
             }
         });
 
+
         // ✅ Add product to table and hidden inputs
-        $("#addProduct").click(function (e) {
+               // ✅ Add product to table and hidden inputs
+               $("#addProduct").click(function (e) {
             e.preventDefault();
             var productId = $("#productId").val();
             var productName = $("#productSearch").val();
@@ -183,17 +187,17 @@
                 return;
             }
 
-                   $("#productsTable tbody").append(
-            "<tr>" +
-                "<td>" + productName + "</td>" +
-                "<td>" + costPrice + "</td>" +
-                "<td>" + qty + "</td>" +
-                '<input type="hidden" name="BatchDetails[' + productIndex + '].product_id" value="' + productId + '" />' +
-                '<input type="hidden" name="BatchDetails[' + productIndex + '].cost_price" value="' + costPrice + '" />' +
-                '<input type="hidden" name="BatchDetails[' + productIndex + '].quantity_recived" value="' + qty + '" />' +
-            "</tr>"
-        );
-
+            $("#productsTable tbody").append(
+                "<tr>" +
+                    "<td>" + productName + "</td>" +
+                    "<td>" + costPrice + "</td>" +
+                    "<td>" + qty + "</td>" +
+                    "<td><button type='button' class='btn btn-danger btn-sm deleteRow'>Delete</button></td>" +
+                    '<input type="hidden" name="BatchDetails[' + productIndex + '].product_id" value="' + productId + '" />' +
+                    '<input type="hidden" name="BatchDetails[' + productIndex + '].cost_price" value="' + costPrice + '" />' +
+                    '<input type="hidden" name="BatchDetails[' + productIndex + '].quantity_recived" value="' + qty + '" />' +
+                "</tr>"
+            );
 
             productIndex++;
 
@@ -204,8 +208,21 @@
             $("#quantity").val("");
         });
 
+
+
         // ✅ Optional: clear form after save
         $("#saveButton").click(function () {
+                if ($("#supplierId").val() === "" || $("#supplierId").val() === "0") {
+            alert("Please select a valid supplier from the list.");
+            e.preventDefault();
+            return;
+        }
+
+        if ($("#productsTable tbody tr").length === 0) {
+            alert("Please add at least one product.");
+            e.preventDefault();
+            return;
+        }
             // allow form submission, but clear afterwards
             setTimeout(() => {
                 $("#batchname").val("");
@@ -217,5 +234,10 @@
                 $("#productsTable tbody").empty();
             }, 500);
         });
+                // ✅ Handle delete button
+        $(document).on("click", ".deleteRow", function () {
+            $(this).closest("tr").remove();
+        });
+
     </script>
 }
